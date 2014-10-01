@@ -1,0 +1,191 @@
+body {
+	background-color: #DFEBFD;
+	padding: 20px;
+}
+
+.login-label {
+	display: inline-block;
+	width: 100px;
+}
+.login-input {
+	width: 300px;
+}
+.btn-small {
+	padding: 4px 8px;
+}
+#toggleLoginInfo {
+	margin-left: 10px;
+	font-style: italic;
+	cursor: pointer;
+}
+.login-info {
+	margin-top: 10px;
+	display: none;
+}
+.login-info > div:not(:first-child) {
+	margin-top: 3px;
+}
+
+.box {
+	display: inline-block;
+	padding: 10px;
+	border: solid 1px #28a4c9;
+	margin: 20px;
+	border-radius: 20px;
+	vertical-align: top;
+	text-align: center;
+}
+.dialpad {
+	width: 202px;
+	font-size: 0;
+}
+.touch-key {
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	font-size: 26px;
+}
+.action-btn {
+	margin: 5px;
+	width: 80px;
+	font-size: 16px;
+	padding: 6px;
+}
+#numberInput {
+	width: 170px;
+	height: 40px;
+	margin: 5px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.call-progress-title {
+	margin: 20px;
+	font-size: 30px;
+	font-style: italic;
+	color: #2d6ca2;
+}
+#btnMute {
+	margin: 20px;
+}
+.call-progress-bar {
+	display: block;
+	width: 230px;
+	margin: auto;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+}
+.call-progress-bar::-webkit-progress-bar {
+	background-color: #eee;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.call-progress-bar::-webkit-progress-value {
+	background-image:
+		-webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+		-webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+		-webkit-linear-gradient(left, #09c, #09c);
+
+	border-radius: 2px; 
+	background-size: 35px 20px, 100% 100%, 100% 100%;
+	-webkit-animation: animate-stripes 0.5s linear infinite;
+	animation: animate-stripes 0.5s linear infinite;
+}
+.call-progress-bar::-moz-progress-bar {
+	background-image:
+		-moz-linear-gradient(135deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%),
+		-moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+		-moz-linear-gradient(left, #09c, #09c);
+
+	border-radius: 2px; 
+	background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+@-webkit-keyframes animate-stripes { 100% { background-position: -35px 0px; } }
+@keyframes animate-stripes { 100% { background-position: -35px 0px; } }
+
+.info-box {
+	float: right;
+}
+.info-box > div {
+	padding: 10px;
+	border: solid 1px #e38d13;
+	margin: 20px;
+	border-radius: 20px;
+	color: #2b669a;
+}
+.info-title {
+	font-size: 22px;
+}
+.conf-line {
+	font-size: 16px;
+	padding: 10px;
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+.conf-numbers {
+	width: 270px;
+}
+.help-box {
+	display: none;
+}
+.help-box code {
+	white-space: pre;
+}
+.help-box a {
+	text-decoration: underline;
+}
+
+/********************************************************/
+
+.demo-flash-error {
+	color: red;
+	font-style: italic;
+	font-size: 18px;
+}
+
+#flash_div {
+	border: 1px solid white;
+	display: inline-block;
+}
+
+#popupOverlay {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.8;
+}
+#popup {
+	display: none;
+	position: fixed;
+	left: 50px;
+	top: 50px;
+	width: 300px;
+	border: solid 1px black;
+	border-radius: 4px;
+	z-index: 1001;
+	background: white;
+}
+#popup #popupHeader {
+	padding: 10px 20px;
+	text-transform: capitalize;
+	border-bottom: solid 1px black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#popup #popupContent {
+	padding: 20px;
+}
+#popup #popupActions {
+	padding: 10px;
+	border-top: solid 1px black;
+	text-align: center;
+}
