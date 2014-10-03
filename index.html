@@ -82,19 +82,19 @@
 				<div class="login-info">
 					<div>
 						<span class="login-label">Private Identity:</span>
-						<input class="login-input" type="text" id="privateIdentity" value="user_3333">
+						<input class="login-input" type="text" id="privateIdentity" value="webrtc_device">
 					</div>
 					<div>
 						<span class="login-label">Public Identity:</span>
-						<input class="login-input" type="text" id="publicIdentity" value="sip:user_3333@webdev.realm">
+						<input class="login-input" type="text" id="publicIdentity" value="sip:webrtc_device@userxxx.kazoocon.com">
 					</div>
 					<div>
 						<span class="login-label">Password:</span>
-						<input class="login-input" type="text" id="password" value="webdev">
+						<input class="login-input" type="text" id="password" value="webrtc_device">
 					</div>
 					<div>
 						<span class="login-label">Realm:</span>
-						<input class="login-input" type="text" id="realm" value="webdev.realm">
+						<input class="login-input" type="text" id="realm" value="userxxx.kazoocon.com">
 					</div>
 				</div>
 			</div>
@@ -161,8 +161,8 @@
 
 			function login(){
 				var kazooParams = {
-					wsUrl: 'ws://10.26.0.41:8080',
-					rtmpUrl: 'rtmp://10.26.0.41/sip',
+					wsUrl: 'ws://192.168.1.91:8080',
+					rtmpUrl: 'rtmp://192.168.1.91/sip',
 					realm: document.getElementById('realm').value,
 					privateIdentity: document.getElementById('privateIdentity').value,
 					publicIdentity: document.getElementById('publicIdentity').value,
@@ -175,9 +175,7 @@
 					onConnecting: onConnecting,
 					onTransfer: onTransfer,
 					onNotified: onNotified,
-					onError: onError,
-					reconnectMaxAttempts: 3, // Unlimited autoreconnect attempts
-					reconnectDelay: 5000 // New autoreconnect attempt every 5 seconds
+					onError: onError
 				};
 
 				kazoo.register(kazooParams);
