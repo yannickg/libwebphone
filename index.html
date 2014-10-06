@@ -53,7 +53,11 @@
 		<div class="info-box">
 			<div class="conf-numbers">
 				<div class="info-title">Conference Numbers:</div>
-				<div class="conf-line">+1 (555) 555-5555</div>
+				<div class="conf-line">415 888 2001</div>
+				<div class="conf-line">415 888 2002</div>
+				<div class="conf-line">415 888 2003</div>
+				<div class="conf-line">415 888 2004</div>
+				<div class="conf-line">415 888 2005</div>
 			</div>
 			<div class="help-box">
 				<div class="info-title">Enable "Call" button:</div>
@@ -161,8 +165,8 @@
 
 			function login(){
 				var kazooParams = {
-					wsUrl: 'ws://192.168.1.91:8080',
-					rtmpUrl: 'rtmp://192.168.1.91/sip',
+					wsUrl: 'ws://ws.kazoocon.com:8080',
+					rtmpUrl: 'rtmp://rtmp.kazoocon.com/sip',
 					realm: document.getElementById('realm').value,
 					privateIdentity: document.getElementById('privateIdentity').value,
 					publicIdentity: document.getElementById('publicIdentity').value,
@@ -208,7 +212,7 @@
 			}
 
 			function onAccepted() {
-				document.getElementById('divCalling').style.display = "block";
+				document.getElementById('divCalling').style.display = "inline-block";
 			}
 
 			function onConnected() {
@@ -273,19 +277,19 @@
 			function mute() {
 				var muteBtn = $('#btnMute');
 				if(muteBtn.data('state') === 'unmuted') {
-					// kazoo.muteMicrophone(true, function() {
+					kazoo.muteMicrophone(true, function() {
 						muteBtn.data('state', 'muted')
 							   .toggleClass('active');
 						muteBtn.find('i').toggleClass('fa-microphone', false)
 										 .toggleClass('fa-microphone-slash', true);
-					// });
+					});
 				} else {
-					// kazoo.muteMicrophone(false, function() {
+					kazoo.muteMicrophone(false, function() {
 						muteBtn.data('state', 'unmuted')
 							   .toggleClass('active');
 						muteBtn.find('i').toggleClass('fa-microphone', true)
 										 .toggleClass('fa-microphone-slash', false);
-					// });
+					});
 				}
 			}
 
